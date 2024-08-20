@@ -91,7 +91,7 @@ public class RewriteUtils {
     String version = page.getProperties().get(PN_PRE_MODERNIZE_VERSION, String.class);
     if (StringUtils.isBlank(version)) {
       String date = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss.SSS").format(new Date());
-      String label = String.format("%s - %s", VERSION_LABEL, date);
+      String label = "%s - %s".formatted(VERSION_LABEL, date);
       Revision revision = pm.createRevision(page, label, VERSION_DESC);
       ModifiableValueMap mvm = page.getContentResource().adaptTo(ModifiableValueMap.class);
       mvm.put(PN_PRE_MODERNIZE_VERSION, revision.getId());
@@ -103,7 +103,7 @@ public class RewriteUtils {
     String target = source.getPath().replace(sourceRoot, targetRoot);
     Page page = pm.getPage(target);
     if (page != null) {
-      throw new RewriteException(String.format("Target page already exists for requested copy: {}", target));
+      throw new RewriteException("Target page already exists for requested copy: {}".formatted(target));
     }
     return pm.copy(source, target, null, true, false, false); // Copy but only this page, fail if in conflict, don't save.
   }

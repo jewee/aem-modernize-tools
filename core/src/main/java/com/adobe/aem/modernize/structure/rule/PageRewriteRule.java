@@ -96,7 +96,7 @@ public class PageRewriteRule implements StructureRewriteRule {
 
   @Override
   public String getTitle() {
-    return String.format("PageRewriteRule (%s -> %s)", staticTemplate, editableTemplate);
+    return "PageRewriteRule (%s -> %s)".formatted(staticTemplate, editableTemplate);
   }
 
   @Override
@@ -185,11 +185,11 @@ public class PageRewriteRule implements StructureRewriteRule {
 
     String path = PathUtils.concat(editableTemplate, "structure", NN_CONTENT);
     if (!session.nodeExists(path)) {
-      throw new RewriteException(String.format("Unable to find Editable Template: {}", editableTemplate));
+      throw new RewriteException("Unable to find Editable Template: {}".formatted(editableTemplate));
     }
     Node structure = session.getNode(path);
     if (!structure.hasProperty(JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY)) {
-      throw new RewriteException(String.format("Unable to find sling:resourceType on template structure: {}", path));
+      throw new RewriteException("Unable to find sling:resourceType on template structure: {}".formatted(path));
     }
     return structure.getProperty(JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY).getString();
   }
@@ -444,8 +444,10 @@ public class PageRewriteRule implements StructureRewriteRule {
 
     @AttributeDefinition(
         name = "Component Order",
-        description = "Specify the order of the components in the new root container. " +
-            "Any found and unspecified are moved to the end in arbitrary order.",
+        description = """
+            Specify the order of the components in the new root container. \
+            Any found and unspecified are moved to the end in arbitrary order.\
+            """,
         cardinality = Integer.MAX_VALUE,
         required = false
     )

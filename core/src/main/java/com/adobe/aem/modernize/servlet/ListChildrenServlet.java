@@ -23,8 +23,9 @@ package com.adobe.aem.modernize.servlet;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import javax.servlet.Servlet;
-import javax.servlet.ServletException;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jackrabbit.oak.commons.PathUtils;
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Value;
 import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
-import static javax.servlet.http.HttpServletResponse.*;
+import static jakarta.servlet.http.HttpServletResponse.*;
 import static org.apache.sling.api.servlets.ServletResolverConstants.*;
 
 @Component(

@@ -22,8 +22,7 @@ package com.adobe.aem.modernize.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -32,6 +31,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Value;
 import lombok.experimental.Delegate;
 

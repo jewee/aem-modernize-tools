@@ -581,7 +581,7 @@ public class NodeBasedRewriteRule implements RewriteRule {
 
   @Override
   public String toString() {
-    return String.format("%s[path=%s,ranking=%d]", getTitle(), getId(), getRanking());
+    return "%s[path=%s,ranking=%d]".formatted(getTitle(), getId(), getRanking());
   }
 
   /*

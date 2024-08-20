@@ -97,7 +97,7 @@ public class ConversionJobDataSourceTest {
   @BeforeAll
   public static void beforeAll() {
     Calendar today = Calendar.getInstance();
-    jobDataPath = String.format("%s/%s/%d/%d/%d",
+    jobDataPath = "%s/%s/%d/%d/%d".formatted(
         ConversionJob.JOB_DATA_LOCATION,
         ConversionJob.Type.FULL.name().toLowerCase(),
         today.get(Calendar.YEAR),

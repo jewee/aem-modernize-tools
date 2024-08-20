@@ -370,7 +370,7 @@ public class ScheduleConversionJobServletTest {
     ScheduleConversionJobServlet.ResponseData result = new ObjectMapper().readValue(response.getOutputAsString(), ScheduleConversionJobServlet.ResponseData.class);
 
     Calendar today = Calendar.getInstance();
-    String path = String.format("%s/%s/%s/%s",
+    String path = "%s/%s/%s/%s".formatted(
         ConversionJob.JOB_DATA_LOCATION,
         ConversionJob.Type.FULL.name().toLowerCase(),
         new SimpleDateFormat("yyyy/MM/dd").format(today.getTime()),
@@ -465,7 +465,7 @@ public class ScheduleConversionJobServletTest {
     servlet.doPost(request, response);
 
     Calendar today = Calendar.getInstance();
-    String path = String.format("%s/%s/%s/%s",
+    String path = "%s/%s/%s/%s".formatted(
         ConversionJob.JOB_DATA_LOCATION,
         ConversionJob.Type.FULL.name().toLowerCase(),
         new SimpleDateFormat("yyyy/MM/dd").format(today.getTime()),

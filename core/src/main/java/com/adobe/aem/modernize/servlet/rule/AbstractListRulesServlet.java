@@ -37,9 +37,10 @@ import org.apache.sling.jcr.resource.api.JcrResourceConstants;
 import com.adobe.aem.modernize.rule.RewriteRuleService;
 import com.adobe.aem.modernize.servlet.RuleInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.Value;
 import org.jetbrains.annotations.NotNull;
-import static javax.servlet.http.HttpServletResponse.*;
+import static jakarta.servlet.http.HttpServletResponse.*;
 
 @Deprecated(since = "2.1.0")
 public abstract class AbstractListRulesServlet extends SlingAllMethodsServlet {

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import javax.servlet.Servlet;
+import jakarta.servlet.Servlet;
 
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.sling.api.resource.Resource;

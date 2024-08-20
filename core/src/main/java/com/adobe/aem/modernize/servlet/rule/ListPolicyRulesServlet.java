@@ -20,7 +20,7 @@ package com.adobe.aem.modernize.servlet.rule;
  * #L%
  */
 
-import javax.servlet.Servlet;
+import jakarta.servlet.Servlet;
 
 import com.adobe.aem.modernize.policy.PolicyImportRuleService;
 import com.adobe.aem.modernize.rule.RewriteRuleService;

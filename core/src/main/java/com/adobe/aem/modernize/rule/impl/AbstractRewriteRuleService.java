@@ -171,7 +171,7 @@ public abstract class AbstractRewriteRuleService<S extends ServiceBasedRewriteRu
       predicate.set(JcrPropertyPredicateEvaluator.PROPERTY, JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY);
       int i = 0;
       for (String type : resourceTypes) {
-        predicate.set(String.format("%d_%s", i++, JcrPropertyPredicateEvaluator.VALUE), type);
+        predicate.set("%d_%s".formatted(i++, JcrPropertyPredicateEvaluator.VALUE), type);
       }
       predicate.set(JcrPropertyPredicateEvaluator.OPERATION, JcrPropertyPredicateEvaluator.OP_EQUALS);
       predicate.set(JcrPropertyPredicateEvaluator.AND, "false");
@@ -299,7 +299,7 @@ public abstract class AbstractRewriteRuleService<S extends ServiceBasedRewriteRu
     predicate.set(JcrPropertyPredicateEvaluator.PROPERTY, JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY);
     int i = 0;
     for (String type : types) {
-      predicate.set(String.format("%d_%s", i++, JcrPropertyPredicateEvaluator.VALUE), String.format("%%%s%%", type));
+      predicate.set("%d_%s".formatted(i++, JcrPropertyPredicateEvaluator.VALUE), "%%%s%%".formatted(type));
     }
     predicate.set(JcrPropertyPredicateEvaluator.OPERATION, JcrPropertyPredicateEvaluator.OP_LIKE);
     predicate.set(JcrPropertyPredicateEvaluator.AND, "false");

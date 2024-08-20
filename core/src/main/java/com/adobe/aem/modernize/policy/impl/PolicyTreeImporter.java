@@ -82,10 +82,10 @@ class PolicyTreeImporter {
       throw new RewriteException("Policy import cannot result in a null.");
     }
     if (!result.hasProperty(NameConstants.PN_TITLE)) {
-      result.setProperty(NameConstants.PN_TITLE, String.format("Imported (%s)", origPath));
+      result.setProperty(NameConstants.PN_TITLE, "Imported (%s)".formatted(origPath));
     }
     if (!result.hasProperty(NameConstants.PN_DESCRIPTION)) {
-      result.setProperty(NameConstants.PN_DESCRIPTION, String.format("Imported from: %s", origPath));
+      result.setProperty(NameConstants.PN_DESCRIPTION, "Imported from: %s".formatted(origPath));
     }
     result = moveTo(rr, result, dest);
     // Rule may delete original.

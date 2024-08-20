@@ -121,9 +121,9 @@ public class ColumnControlRewriteRule implements ComponentRewriteRule {
     Collections.sort(keys);
     for (int i = 0; i < keys.size(); i++) {
       String key = keys.get(i);
-      names[i] = String.format("%s=[%s]", key, StringUtils.join(widths.get(key), ','));
+      names[i] = "%s=[%s]".formatted(key, StringUtils.join(widths.get(key), ','));
     }
-    return String.format("ColumnControlRewriteRule ('%s' => %s)", layout, StringUtils.join(names, ','));
+    return "ColumnControlRewriteRule ('%s' => %s)".formatted(layout, StringUtils.join(names, ','));
   }
 
   @Override
@@ -499,10 +499,12 @@ public class ColumnControlRewriteRule implements ComponentRewriteRule {
 
     @AttributeDefinition(
         name = "Column Widths",
-        description = "Array of layout mapping widths for the conversion. " +
-            "Format is '<name>=[<widths>]' where <name> is the responsive grid layout name, and <widths> is a list of widths foreach column size. " +
-            "Example: default=[6,6] will set the responsive grid layout 'default' to each item in the a column to be six grid columns wide. " +
-            "Each entry must have the number of columns matched in the layout property.",
+        description = """
+            Array of layout mapping widths for the conversion. \
+            Format is '<name>=[<widths>]' where <name> is the responsive grid layout name, and <widths> is a list of widths foreach column size. \
+            Example: default=[6,6] will set the responsive grid layout 'default' to each item in the a column to be six grid columns wide. \
+            Each entry must have the number of columns matched in the layout property.\
+            """,
         cardinality = Integer.MAX_VALUE
     )
     String[] column_widths();

@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import javax.servlet.Servlet;
+import jakarta.servlet.Servlet;
 
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.sling.api.resource.Resource;
